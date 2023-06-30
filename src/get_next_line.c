@@ -1,4 +1,4 @@
-#include "get_next_line.h"
+#include "../inc/libft.h"
 
 static char	*ft_next_line(char *buffer)
 {
@@ -19,7 +19,6 @@ static char	*ft_next_line(char *buffer)
 	j = 0;
 	while (buffer[i])
 		leftover[j++] = buffer[i++];
-	leftover[j] = '\0';
 	free(buffer);
 	return (leftover);
 }
@@ -71,16 +70,16 @@ static char	*ft_read_line(int fd, char *buffer)
 
 char	*get_next_line(int fd)
 {
-	static char	*buffer;
+	static char	*buffer[OPEN_MAX];
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	buffer = ft_read_line(fd, buffer);
-	if (!buffer)
+	buffer[fd] = ft_read_line(fd, buffer[fd]);
+	if (!buffer[fd])
 		return (NULL);
-	line = ft_line(buffer);
-	buffer = ft_next_line(buffer);
+	line = ft_line(buffer[fd]);
+	buffer[fd] = ft_next_line(buffer[fd]);
 	return (line);
 }
 

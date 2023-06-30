@@ -1,4 +1,4 @@
-#include "libft.h"
+#include "../inc/libft.h"
 
 t_list	*ft_lstlast(t_list *lst)
 {

@@ -1,17 +1,25 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+/*---------------------------  Librerias  ------------------------------------*/
+# include "ft_pritf.h"
+# include "get_next_line_bonus.h"
+# include <fcntl.h>
 # include <limits.h>
+# include <stdarg.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <string.h>
 # include <unistd.h>
 
+/*---------------------------  Estructuras  ----------------------------------*/
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
 
+/*---------------------------  Funciones  ------------------------------------*/
 int					ft_atoi(const char *str);
 void				ft_bzero(void *str, size_t size);
 void				*ft_calloc(size_t num, size_t size);

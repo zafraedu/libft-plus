@@ -1,4 +1,4 @@
-#include "libft.h"
+#include "../inc/libft.h"
 
 /*---------------------------  ft_sltoa  -------------------------------------*/
 static size_t	len_sl(long long nl)

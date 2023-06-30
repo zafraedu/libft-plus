@@ -1,4 +1,4 @@
-#include "libft.h"
+#include "../inc/libft.h"
 
 size_t	len_int(int n)
 {

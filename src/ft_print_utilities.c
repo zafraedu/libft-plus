@@ -1,4 +1,4 @@
-#include "../inc/ft_printf.h"
+#include "../inc/libft.h"
 
 void	reset_block(t_block *b)
 {

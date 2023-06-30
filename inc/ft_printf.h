@@ -1,14 +1,6 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-/*---------------------------  Librerias  ------------------------------------*/
-# include "../libft/libft.h"
-# include <stdarg.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <string.h>
-# include <unistd.h>
-
 /*---------------------------  Macros  ---------------------------------------*/
 # define PRINTF_FLAG "0+-# hl"
 

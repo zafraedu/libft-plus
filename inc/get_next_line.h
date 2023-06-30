@@ -1,15 +1,12 @@
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
-# include <fcntl.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-
+/*---------------------------  Macros  ---------------------------------------*/
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
 
+/*---------------------------  Funciones  ------------------------------------*/
 char	*get_next_line(int fd);
 int		ft_strlen(char *s);
 char	*ft_strchr(char *s, int c);

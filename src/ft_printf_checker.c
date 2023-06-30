@@ -1,4 +1,4 @@
-#include "../inc/ft_printf.h"
+#include "../inc/libft.h"
 
 static void
 flag_len(const char *str, t_block *b)
