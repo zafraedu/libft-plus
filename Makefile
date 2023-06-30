@@ -6,16 +6,14 @@ AR = ar rcs
 RM = rm -rf
 
 # busca todos los archivos .c en la carpeta src
-SRCS = $(wildcard $(SRC_PATH)/*.c)
-# addprefix agrega al directorio OBJ los archivos .c tranformados en .o
-# OBJS = $(addprefix $(OBJ_PATH)/, $(SRCS:.c=.o))
-OBJS = $(patsubst $(SRC_PATH)/%.c, $(OBJ_PATH)/%.o, $(SRCS))
-
+SRCS = $(wildcard $(SRC_DIR)/*.c)
+# reemplaza la ruta src por obj y cambia la extensión .c a .o
+OBJS = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))
 
 #########################  directorios(rutas)  #################################
-OBJ_PATH = obj
-SRC_PATH = src
-INC_PATH = inc
+OBJ_DIR = obj
+SRC_DIR = src
+INC_DIR = inc
 
 #########################  Colores  ############################################
 R = \033[31;1m
@@ -29,21 +27,21 @@ END = \033[0m
 #########################  Normas  #############################################
 $(NAME): $(OBJS)
 	$(AR) $@ $(OBJS)
-	@echo "\n$(G)[Compiled $(C)'$@' $(G)successfully]\n$(END)"
+	@echo "\n$(G)[Compiled $(C)'$@' $(G)successfully 🛠  ✅]\n$(END)"
 
-$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(INC_PATH)/libft.h
-	mkdir -p $(OBJ_PATH)
-	$(CC) $(CFLAGS) -I $(INC_PATH) -c $< -o $@
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INC_DIR)/libft.h
+	mkdir -p $(OBJ_DIR)
+	$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
 
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJ_PATH)
-	@echo "\n$(Y)[Cleaned $(C) $(NAME) objects $(Y)successfully]\n$(END)"
+	$(RM) $(OBJ_DIR)
+	@echo "\n$(Y)[Cleaned $(C) $(NAME) objects $(Y)successfully 🧹 ✅]\n$(END)"
 
 fclean: clean
 	$(RM) $(NAME)
-	@echo "$(R)[Removed $(C)'$(NAME)' $(R)successfully]\n$(END)"
+	@echo "$(R)[Removed $(C)'$(NAME)' $(R)successfully 🔥 ✅]\n$(END)"
 
 re: fclean all
 
