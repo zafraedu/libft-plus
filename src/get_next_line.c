@@ -70,7 +70,7 @@ static char	*ft_read_line(int fd, char *buffer)
 
 char	*get_next_line(int fd)
 {
-	static char	*buffer[OPEN_MAX];
+	static char	*buffer[FOPEN_MAX];
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
@@ -82,21 +82,3 @@ char	*get_next_line(int fd)
 	buffer[fd] = ft_next_line(buffer[fd]);
 	return (line);
 }
-
-/*int	main(void)
-{
-	int	fd;
-
-	fd = open("prueba.txt", O_RDONLY);
-	if (fd == -1)
-	{
-		perror ("open");
-		exit(EXIT_FAILURE);
-	}
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	close(fd);
-	return (0);
-}
-*/

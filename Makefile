@@ -38,13 +38,11 @@ $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c $(INC_PATH)/libft.h
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJS) $(OBJ_PATH)
-	make clean -C $(LIBFT_PATH)
+	$(RM) $(OBJ_PATH)
 	@echo "\n$(Y)[Cleaned $(C) $(NAME) objects $(Y)successfully]\n$(END)"
 
 fclean: clean
 	$(RM) $(NAME)
-	make fclean -C $(LIBFT_PATH)
 	@echo "$(R)[Removed $(C)'$(NAME)' $(R)successfully]\n$(END)"
 
 re: fclean all
