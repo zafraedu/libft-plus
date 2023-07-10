@@ -19,7 +19,7 @@ flag_len_pf(const char *str, t_block *b)
 	}
 }
 
-void	ft_check_flags(const char *str, t_block *b)
+void	checkflags_pf(const char *str, t_block *b)
 {
 	while (ft_strchr(PRINTF_FLAG, str[b->i]) && str[b->i] != '\0')
 	{
@@ -29,7 +29,7 @@ void	ft_check_flags(const char *str, t_block *b)
 }
 
 // falta las funciones -----------------------------------------
-void	ft_check_types(const char *str, t_block *b)
+void	checktypes_pf(const char *str, t_block *b)
 {
 	if (str[b->i] == '%' || str[b->i] == 'c' || str[b->i] == 's')
 		ft_converter_cs(str[b->i], b);

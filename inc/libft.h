@@ -102,8 +102,8 @@ void				ft_toupper_str(char *str);
 //ft_printf
 int					ft_printf(const char *str, ...);
 void				reset_block_pf(t_block *b);
-void				ft_check_flags_pf(const char *str, t_block *b);
-void				ft_check_types_pf(const char *str, t_block *b);
+void				checkflags_pf(const char *str, t_block *b);
+void				checktypes_pf(const char *str, t_block *b);
 void				ft_converter_cs(char type, t_block *b);
 void				ft_converter_id(t_block *b);
 void				ft_converter_u(t_block *b);

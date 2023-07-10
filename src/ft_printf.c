@@ -14,8 +14,8 @@ int	ft_printf(const char *str, ...)
 		{
 			(b.i)++;
 			reset_block_pf(&b);
-			ft_check_flags_pf(str, &b);
-			ft_check_types_pf(str, &b);
+			checkflags_pf(str, &b);
+			checktypes_pf(str, &b);
 		}
 	}
 	va_end(b.ap);
