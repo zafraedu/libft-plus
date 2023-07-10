@@ -101,19 +101,19 @@ void				ft_toupper_str(char *str);
 
 //ft_printf
 int					ft_printf(const char *str, ...);
-void				reset_block(t_block *b);
-void				ft_check_flags(const char *str, t_block *b);
-void				ft_check_types(const char *str, t_block *b);
+void				reset_block_pf(t_block *b);
+void				ft_check_flags_pf(const char *str, t_block *b);
+void				ft_check_types_pf(const char *str, t_block *b);
 void				ft_converter_cs(char type, t_block *b);
 void				ft_converter_id(t_block *b);
 void				ft_converter_u(t_block *b);
 void				ft_converter_x(char type, t_block *b);
 void				ft_converter_o(t_block *b);
 void				ft_converter_p(t_block *b);
-void				print_char(char c, t_block *b);
-void				print_str(t_block *b);
-void				print_null(t_block *b);
-void				print_dig(t_block *b);
+void				print_char_pf(char c, t_block *b);
+void				print_str_pf(t_block *b);
+void				print_null_pf(t_block *b);
+void				print_dig_pf(t_block *b);
 
 //get_next_line
 char				*get_next_line(int fd);
