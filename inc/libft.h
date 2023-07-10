@@ -117,9 +117,9 @@ void				print_dig(t_block *b);
 
 //get_next_line
 char				*get_next_line(int fd);
-int					ft_strlen_g(char *s);
-char				*ft_strchr_g(char *s, int c);
-void				*ft_calloc_g(size_t count, size_t size);
-char				*ft_strjoin_g(char *s1, char *s2);
+int					ft_strlen_gnl(char *s);
+char				*ft_strchr_gnl(char *s, int c);
+void				*ft_calloc_gnl(size_t count, size_t size);
+char				*ft_strjoin_gnl(char *s1, char *s2);
 
 #endif
