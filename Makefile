@@ -19,7 +19,7 @@ INC_DIR = inc
 $(NAME): $(OBJS)
 	$(AR) $@ $(OBJS)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INC_DIR)/libft.h
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INC_DIR)/*.h
 	mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
 

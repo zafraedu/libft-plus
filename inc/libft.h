@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezafra-r <ezafra-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zafraedu <zafraedu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 18:19:40 by ezafra-r          #+#    #+#             */
-/*   Updated: 2023/07/15 18:19:42 by ezafra-r         ###   ########.fr       */
+/*   Updated: 2023/07/23 00:44:15 by zafraedu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define LIBFT_H
 
 /*---------------------------  Librerias  ------------------------------------*/
+# include "./ft_printf.h"
+# include "./get_next_line.h"
 # include <fcntl.h>
 # include <limits.h>
 # include <stdarg.h>
@@ -22,45 +24,14 @@
 # include <string.h>
 # include <unistd.h>
 
-/*---------------------------  Macros  ---------------------------------------*/
-//ft_printf
-# define PRINTF_FLAG "0+-# hl"
-
-//get_next_line
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
-
 /*---------------------------  Estructuras  ----------------------------------*/
-//libft
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
 
-//ft_printf
-typedef struct s_flags
-{
-	int				len_h;
-	int				len_hh;
-	int				len_l;
-	int				len_ll;
-
-}					t_flags;
-typedef struct s_block
-{
-	int				ret;
-	int				i;
-	char			type;
-	char			*s;
-	va_list			ap;
-	t_flags			flags;
-
-}					t_block;
-
 /*---------------------------  Funciones  ------------------------------------*/
-//libft
 int					ft_atoi(const char *str);
 void				ft_bzero(void *str, size_t size);
 void				*ft_calloc(size_t num, size_t size);
@@ -70,7 +41,6 @@ int					ft_isascii(int c);
 int					ft_isdigit(int c);
 int					ft_isprint(int c);
 char				*ft_itoa(int n);
-char				*ft_sltoa(signed long long sl);
 char				*ft_ultoa(unsigned long long ul);
 char				*ft_itoa_base(unsigned long long ul, int base);
 void				ft_lstadd_back(t_list **lst, t_list *new);
@@ -113,28 +83,5 @@ char				*ft_substr(char const *s, unsigned int start, size_t len);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
 void				ft_toupper_str(char *str);
-
-//ft_printf
-int					ft_printf(const char *str, ...);
-void				reset_block_pf(t_block *b);
-void				checkflags_pf(const char *str, t_block *b);
-void				checktypes_pf(const char *str, t_block *b);
-void				ft_converter_cs(char type, t_block *b);
-void				ft_converter_id(t_block *b);
-void				ft_converter_u(t_block *b);
-void				ft_converter_x(char type, t_block *b);
-void				ft_converter_o(t_block *b);
-void				ft_converter_p(t_block *b);
-void				print_char_pf(char c, t_block *b);
-void				print_str_pf(t_block *b);
-void				print_null_pf(t_block *b);
-void				print_dig_pf(t_block *b);
-
-//get_next_line
-char				*get_next_line(int fd);
-int					ft_strlen_gnl(char *s);
-char				*ft_strchr_gnl(char *s, int c);
-void				*ft_calloc_gnl(size_t count, size_t size);
-char				*ft_strjoin_gnl(char *s1, char *s2);
 
 #endif
