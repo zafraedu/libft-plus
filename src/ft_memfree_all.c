@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_memfree_all.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezafra-r <ezafra-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zafraedu <zafraedu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/15 18:22:56 by ezafra-r          #+#    #+#             */
-/*   Updated: 2023/07/15 18:22:57 by ezafra-r         ###   ########.fr       */
+/*   Created: 2023/07/20 17:02:51 by zafraedu          #+#    #+#             */
+/*   Updated: 2023/07/20 17:03:13 by zafraedu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
 
-int	ft_toupper(int c)
+void	ft_memfree_all(char **ptr)
 {
-	if (c >= 'a' && c <= 'z')
-		c -= 32;
-	return (c);
+	int	i;
+
+	if (!ptr)
+		return ;
+	i = 0;
+	while (ptr[i])
+		ft_memfree(ptr[i++]);
+	free(ptr);
+	ptr = NULL;
 }

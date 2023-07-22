@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ezafra-r <ezafra-r@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/15 18:19:40 by ezafra-r          #+#    #+#             */
+/*   Updated: 2023/07/15 18:19:42 by ezafra-r         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
@@ -74,6 +86,8 @@ int					ft_lstsize(t_list *lst);
 void				*ft_memchr(const void *str, int c, size_t size);
 int					ft_memcmp(const void *s1, const void *s2, size_t size);
 void				*ft_memcpy(void *dest, const void *src, size_t size);
+void				ft_memfree_all(char **ptr);
+void				ft_memfree(void *ptr);
 void				*ft_memmove(void *dest, const void *src, size_t size);
 void				*ft_memset(void *str, int c, size_t size);
 void				ft_putchar_fd(char c, int fd);
@@ -82,6 +96,7 @@ void				ft_putnbr_fd(int n, int fd);
 void				ft_putstr_fd(char *s, int fd);
 char				**ft_split(char const *s, char c);
 char				*ft_strchr(const char *str, int c);
+int					ft_strcmp(const char *s1, const char *s2);
 char				*ft_strdup(const char *str);
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 char				*ft_strjoin(char const *s1, char const *s2);
