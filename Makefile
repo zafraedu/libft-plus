@@ -15,21 +15,29 @@ OBJ_DIR = obj
 SRC_DIR = src
 INC_DIR = inc
 
+#########################  Colors  #############################################
+WHITE	:= \033[37;1m
+RESET	:= \033[0m
+U_LINE	:= \033[4m
+BLUE = \033[1;38;5;27m
+
 #########################  Normas  #############################################
 $(NAME): $(OBJS)
-	$(AR) $@ $(OBJS)
+	@$(AR) $@ $(OBJS)
+	@echo "\n$(WHITE)$(U_LINE) LIBFT: Compiled $(RESET)\n"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INC_DIR)/*.h
-	mkdir -p $(OBJ_DIR)
-	$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
+	@mkdir -p $(OBJ_DIR)
+	@echo "$(BLUE)LIBFT Compiling:$(RESET) $(notdir $<)"
+	@$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
 
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJ_DIR)
+	@$(RM) $(OBJ_DIR)
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all
 
