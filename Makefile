@@ -23,21 +23,21 @@ BLUE = \033[1;38;5;27m
 
 #########################  Normas  #############################################
 $(NAME): $(OBJS)
-	@$(AR) $@ $(OBJS)
-	@echo "\n$(WHITE)$(U_LINE) LIBFT: Compiled $(RESET)\n"
+	$(AR) $@ $(OBJS)
+	@echo "\n$(WHITE)$(U_LINE) PUSH_SWAP & LIBFT: Compiled $(RESET)\n"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INC_DIR)/*.h
-	@mkdir -p $(OBJ_DIR)
+	mkdir -p $(OBJ_DIR)
 	@echo "$(BLUE)LIBFT Compiling:$(RESET) $(notdir $<)"
-	@$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
+	$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
 
 all: $(NAME)
 
 clean:
-	@$(RM) $(OBJ_DIR)
+	$(RM) $(OBJ_DIR)
 
 fclean: clean
-	@$(RM) $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 
