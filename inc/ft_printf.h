@@ -3,69 +3,85 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zafraedu <zafraedu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ezafra-r <ezafra-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/22 23:58:08 by zafraedu          #+#    #+#             */
-/*   Updated: 2023/07/23 00:31:18 by zafraedu         ###   ########.fr       */
+/*   Created: 2023/10/08 01:46:28 by ezafra-r          #+#    #+#             */
+/*   Updated: 2023/10/08 01:55:41 by ezafra-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-/*---------------------------  Librerias  ------------------------------------*/
-# include "./libft.h"
-# include <fcntl.h>
-# include <limits.h>
 # include <stdarg.h>
-# include <stddef.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <string.h>
 # include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include "./libft.h"
 
-/*---------------------------  Macros  ---------------------------------------*/
-# define PRINTF_FLAG "0+-# hl"
-
-/*---------------------------  Estructuras  ----------------------------------*/
+/* ---------- FLAGS --------------------- */
 typedef struct s_flags
 {
-	int		len_h;
-	int		len_hh;
-	int		len_l;
-	int		len_ll;
+	int	spec;
+	int	width;
+	int	left;
+	int	zero;
+	int	star;
+	int	precision;
+	int	hash;
+	int	space;
+	int	plus;
+}		t_flags;
 
-}			t_flags;
+t_flags	ft_flags_init(void);
+t_flags	ft_flag_left(t_flags flags);
+t_flags	ft_flag_digit(char c, t_flags flags);
+t_flags	ft_flag_width(va_list args, t_flags flags);
+int		ft_flag_precision(const char *str, int pos,
+			va_list args, t_flags *flags);
 
-typedef struct s_block
-{
-	int		ret;
-	int		i;
-	char	type;
-	char	*s;
-	va_list	ap;
-	t_flags	flags;
+/* ---------- PRINTF -------------------- */
+int		ft_printf(const char *format, ...);
+int		ft_print_arg(char type, va_list args, t_flags flags);
 
-}			t_block;
+/* ---------- PRINT SPECIFIERS ---------- */
+// c
+int		ft_print_char(char c, t_flags flags);
+int		ft_print_c(char c);
+// s
+int		ft_print_str(const char *str, t_flags flags);
+int		ft_print_s(const char *str);
+int		ft_print_s_pre(const char *str, int precision);
+int		ft_print_sign_pre(int n, t_flags *flags);
+// i, d
+int		ft_print_int(int n, t_flags flags);
+int		ft_print_integer(char *nbstr, int n, t_flags flags);
+int		ft_print_i(char *nbstr, int n, t_flags flags);
+// u
+int		ft_print_unsigned(unsigned int n, t_flags flags);
+int		ft_print_u(char *nbstr, t_flags flags);
+int		ft_print_unint(char *nbstr, t_flags flags);
+// x, X
+int		ft_print_hex(unsigned int n, int is_upper, t_flags flags);
+int		ft_print_x(char *nbstr, int n, int is_upper, t_flags flags);
+int		ft_print_hexadec(char *nbstr, int n, int is_upper, t_flags flags);
+// p
+int		ft_print_ptr(unsigned long int n, t_flags flags);
+int		ft_print_p(unsigned long int n);
+void	ft_print_adr(unsigned long int n);
 
-/*---------------------------  Funciones  ------------------------------------*/
-int			ft_printf(const char *str, ...);
-void		reset_block_pf(t_block *b);
-// Funciones de chequeo
-void		checkflags_pf(const char *str, t_block *b);
-void		checktypes_pf(const char *str, t_block *b);
-// Funciones para convertir
-void		ft_converter_cs(char type, t_block *b);
-void		ft_converter_id(t_block *b);
-void		ft_converter_u(t_block *b);
-void		ft_converter_x(char type, t_block *b);
-void		ft_converter_o(t_block *b);
-void		ft_converter_p(t_block *b);
-// Funciones para imprimir
+/* ---------- HELPER FUNCTIONS ---------- */
+char	*ft_printf_itoa(long nb);
+char	*ft_printf_utoa(unsigned int nb);
+char	*ft_printf_xtoa(unsigned long int nb, int is_upper);
+int		ft_unint_len(unsigned int n);
+int		ft_hex_len(unsigned int n);
+int		ft_ptr_len(unsigned long int n);
+int		ft_istype(int c);
+int		ft_isspec(int c);
+int		ft_isflag(int c);
 
-void		print_char_pf(char c, t_block *b);
-void		print_str_pf(t_block *b);
-void		print_null_pf(t_block *b);
-void		print_dig_pf(t_block *b);
+/* ---------- FLAG FUNCTIONS ------------ */
+int		ft_pad_width(int total_width, int size, int zero);
 
 #endif

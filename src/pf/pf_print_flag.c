@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_print_flag.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezafra-r <ezafra-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/15 18:21:48 by ezafra-r          #+#    #+#             */
-/*   Updated: 2023/07/15 18:21:48 by ezafra-r         ###   ########.fr       */
+/*   Created: 2021/12/16 18:11:01 by mcombeau          #+#    #+#             */
+/*   Updated: 2023/10/08 01:42:37 by ezafra-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
 
-int	ft_printf(const char *str, ...)
+int	ft_pad_width(int total_width, int size, int zero)
 {
-	t_block	b;
+	int	count;
 
-	ft_bzero(&b, sizeof(b));
-	va_start(b.ap, str);
-	while (str[b.i])
+	count = 0;
+	while (total_width - size > 0)
 	{
-		if (str[b.i] != '%')
-			b.ret += write(1, &str[b.i++], 1);
+		if (zero)
+			count += ft_print_c('0');
 		else
-		{
-			(b.i)++;
-			reset_block_pf(&b);
-			checkflags_pf(str, &b);
-			checktypes_pf(str, &b);
-		}
+			count += ft_print_c(' ');
+		total_width--;
 	}
-	va_end(b.ap);
-	reset_block_pf(&b);
-	return (b.ret);
+	return (count);
 }
