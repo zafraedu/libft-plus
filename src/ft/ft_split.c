@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezafra-r <ezafra-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zafraedu <zafraedu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 18:22:04 by ezafra-r          #+#    #+#             */
-/*   Updated: 2023/07/15 18:22:04 by ezafra-r         ###   ########.fr       */
+/*   Updated: 2023/10/09 00:32:30 by zafraedu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,22 @@ static void	skip_first_delimiter(const char *str, char c, int *i, int *start)
 	*i -= 1;
 }
 
+/**
+ * Divide una cadena en un array de cadenas de caracteres utilizando un
+ * delimitador.
+ *
+ * Esta función toma una cadena 'str' y un carácter delimitador 'c' y divide la
+ * cadena en múltiples subcadenas utilizando 'c' como delimitador. Luego,
+ * devuelve un array de cadenas de caracteres que contiene las subcadenas
+ * resultantes.
+ *
+ * @param str  La cadena de caracteres que se dividirá.
+ * @param c    El carácter delimitador utilizado para separar las subcadenas.
+ *
+ * @return Un array de cadenas de caracteres (matriz de cadenas) que contiene
+ *         las subcadenas resultantes. El último elemento de la matriz es NULL.
+ *         Si hay un error, devuelve NULL.
+ */
 char	**ft_split(const char *str, char c)
 {
 	char	**split;

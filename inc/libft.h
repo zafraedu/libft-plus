@@ -6,14 +6,14 @@
 /*   By: zafraedu <zafraedu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 18:19:40 by ezafra-r          #+#    #+#             */
-/*   Updated: 2023/09/06 18:41:13 by zafraedu         ###   ########.fr       */
+/*   Updated: 2023/10/09 00:53:24 by zafraedu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-/*---------------------------  Librerias  ------------------------------------*/
+/*════════════════════════════ [  LIBS ] ═════════════════════════════════════*/
 # include "./ft_printf.h"
 # include "./get_next_line.h"
 # include <fcntl.h>
@@ -24,14 +24,16 @@
 # include <string.h>
 # include <unistd.h>
 
-/*---------------------------  Estructuras  ----------------------------------*/
+/*══════════════════════════ [  STRUCTS ] ════════════════════════════════════*/
+
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
 
-/*---------------------------  Funciones  ------------------------------------*/
+/*═════════════════════════ [  FUNCTIONS ] ═══════════════════════════════════*/
+
 double				ft_atof(char *str);
 int					ft_atoi(const char *str);
 void				ft_bzero(void *str, size_t size);

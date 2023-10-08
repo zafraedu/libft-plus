@@ -3,15 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezafra-r <ezafra-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zafraedu <zafraedu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 18:21:57 by ezafra-r          #+#    #+#             */
-/*   Updated: 2023/07/15 18:21:58 by ezafra-r         ###   ########.fr       */
+/*   Updated: 2023/10/09 00:27:34 by zafraedu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
 
+/**
+ * Escribe un número entero en un descriptor de archivo específico.
+ *
+ * Esta función toma un número entero 'n' y lo escribe en el descriptor de
+ * archivo 'fd'.
+ *
+ * @param n     El número entero que se escribirá en el archivo.
+ * @param fd    El descriptor de archivo donde se escribirá el número entero.
+ */
 void	ft_putnbr_fd(int n, int fd)
 {
 	long	nb;

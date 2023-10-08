@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezafra-r <ezafra-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zafraedu <zafraedu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 18:20:32 by ezafra-r          #+#    #+#             */
-/*   Updated: 2023/07/15 18:20:33 by ezafra-r         ###   ########.fr       */
+/*   Updated: 2023/10/08 23:52:59 by zafraedu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,18 @@ static char	*str_invert(char *str, int index)
 	return (str);
 }
 
+/**
+ * Convierte un número en una cadena de caracteres en la base especificada.
+ *
+ * Esta función toma un número sin signo 'ul' y lo convierte en una cadena de
+ * caracteres representando dicho número en la base especificada por 'base'
+ * (2, 8 u 16).
+ *
+ * @param ul El número sin signo que se desea convertir.
+ * @param base La base en la que se desea representar el número (2, 8 u 16).
+ * @return Un puntero a la cadena de caracteres que representa el número,
+ *         o NULL en caso de error.
+ */
 char	*ft_itoa_base(unsigned long long ul, int base)
 {
 	char			*str;

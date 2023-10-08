@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezafra-r <ezafra-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zafraedu <zafraedu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 18:22:59 by ezafra-r          #+#    #+#             */
-/*   Updated: 2023/07/15 18:23:00 by ezafra-r         ###   ########.fr       */
+/*   Updated: 2023/10/09 00:55:47 by zafraedu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,21 @@ static char	*ft_read_line(int fd, char *buffer)
 	return (buffer);
 }
 
+/**
+ * Lee la próxima línea de un descriptor de archivo.
+ *
+ * Esta función lee la próxima línea del archivo asociado con el descriptor de
+ * archivo 'fd'. Cada vez que se llama a esta función, devuelve la siguiente
+ * línea del archivo hasta que se alcance el final del archivo. La función
+ * almacena el estado interno del archivo en 'buffer' para continuar desde donde
+ * se detuvo la última vez. Cuando se ha leído una línea completa, la función
+ * devuelve esa línea como una cadena de caracteres. Si no hay más líneas que
+ * leer, la función devuelve NULL.
+ *
+ * @param fd  El descriptor de archivo del que se leerá la próxima línea.
+ * @return    La próxima línea del archivo como una cadena de caracteres o NULL
+ *            si no hay más líneas que leer o si ocurre un error.
+ */
 char	*get_next_line(int fd)
 {
 	static char	*buffer[FOPEN_MAX];

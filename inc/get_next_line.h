@@ -6,14 +6,14 @@
 /*   By: zafraedu <zafraedu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 00:08:05 by zafraedu          #+#    #+#             */
-/*   Updated: 2023/07/23 00:31:15 by zafraedu         ###   ########.fr       */
+/*   Updated: 2023/10/09 00:53:18 by zafraedu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-/*---------------------------  Librerias  ------------------------------------*/
+/*════════════════════════════ [  LIBS ] ═════════════════════════════════════*/
 # include "./libft.h"
 # include <fcntl.h>
 # include <limits.h>
@@ -24,12 +24,13 @@
 # include <string.h>
 # include <unistd.h>
 
-/*---------------------------  Macros  ---------------------------------------*/
+/*════════════════════════════ [  MACROS ] ═══════════════════════════════════*/
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
 
-/*---------------------------  Funciones  ------------------------------------*/
+/*═════════════════════════ [  FUNCTIONS ] ═══════════════════════════════════*/
+
 char	*get_next_line(int fd);
 int		ft_strlen_gnl(char *s);
 char	*ft_strchr_gnl(char *s, int c);

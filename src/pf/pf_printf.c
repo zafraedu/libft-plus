@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezafra-r <ezafra-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zafraedu <zafraedu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 01:52:31 by ezafra-r          #+#    #+#             */
-/*   Updated: 2023/10/08 01:52:32 by ezafra-r         ###   ########.fr       */
+/*   Updated: 2023/10/09 00:57:57 by zafraedu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,11 +90,25 @@ int	ft_parse(char *str, va_list args)
 	return (count);
 }
 
+/**
+ * Imprime datos formateados en la salida estándar o en otro flujo de salida.
+ *
+ * Esta función es similar a la función 'printf' de la biblioteca estándar de
+ * C y se utiliza para formatear y escribir datos en la salida estándar o en un
+ * flujo de salida especificado. El formato se especifica en el parámetro
+ * 'format' y los valores a ser formateados se pasan como argumentos adicionales
+ * utilizando la notación de argumentos variables.
+ *
+ * @param format Cadena de formato que especifica cómo formatear los datos.
+ * @param ...    Argumentos variables que se formatearán según el formato.
+ * @return El número de caracteres escritos en la salida o un valor negativo
+ *         en caso de error.
+ */
 int	ft_printf(const char *format, ...)
 {
-	va_list		args;
-	int			count;
-	char		*str;
+	va_list	args;
+	int		count;
+	char	*str;
 
 	if (!format || *format == '\0')
 		return (0);

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ezafra-r <ezafra-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zafraedu <zafraedu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 18:20:36 by ezafra-r          #+#    #+#             */
-/*   Updated: 2023/07/15 18:20:37 by ezafra-r         ###   ########.fr       */
+/*   Updated: 2023/10/08 23:56:22 by zafraedu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
 
-size_t	len_int(int n)
+static size_t	len_int(int n)
 {
 	size_t	len;
 
@@ -27,6 +27,17 @@ size_t	len_int(int n)
 	return (len);
 }
 
+/**
+ * Convierte un número entero en una cadena de caracteres.
+ *
+ * Esta función toma un número entero 'n' y lo convierte en una cadena de
+ * caracteres. La cadena resultante representa el valor de 'n'. La función
+ * maneja números negativos y positivos.
+ *
+ * @param n El número entero que se desea convertir.
+ * @return Un puntero a la cadena de caracteres que representa el número,
+ *         o NULL en caso de error.
+ */
 char	*ft_itoa(int n)
 {
 	char		*str;

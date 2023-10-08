@@ -1,17 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtod.c                                        :+:      :+:    :+:   */
+/*   ft_atof.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zafraedu <zafraedu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 00:18:52 by zafraedu          #+#    #+#             */
-/*   Updated: 2023/08/23 01:58:24 by zafraedu         ###   ########.fr       */
+/*   Updated: 2023/10/08 23:20:02 by zafraedu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
 
+/**
+ * Convierte una cadena de caracteres en un valor de tipo double.
+ *
+ * Esta función toma una cadena de caracteres que representa un número decimal
+ * y la convierte en un valor de tipo double. Puede manejar números enteros y
+ * decimales en formato estándar (por ejemplo, "123.45") o con coma decimal
+ * (por ejemplo, "123,45").
+ *
+ * @param str La cadena de caracteres que se va a convertir a double.
+ *
+ * @return El valor double correspondiente a la cadena de caracteres.
+ * Si la cadena no es un número válido, devuelve 0.0;
+ */
 double	ft_atof(char *str)
 {
 	int		num;
