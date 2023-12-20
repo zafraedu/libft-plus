@@ -6,7 +6,7 @@
 /*   By: zafraedu <zafraedu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 18:19:40 by ezafra-r          #+#    #+#             */
-/*   Updated: 2023/10/09 00:53:24 by zafraedu         ###   ########.fr       */
+/*   Updated: 2023/12/13 18:32:40 by zafraedu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@
 /*════════════════════════════ [  LIBS ] ═════════════════════════════════════*/
 # include "./ft_printf.h"
 # include "./get_next_line.h"
-# include <fcntl.h>
-# include <limits.h>
-# include <stdarg.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
@@ -34,18 +31,22 @@ typedef struct s_list
 
 /*═════════════════════════ [  FUNCTIONS ] ═══════════════════════════════════*/
 
+char				**ft_arrayadd(char *str, char **array);
+char				**ft_arraydelete(int pos, char **array);
+char				**ft_arraydup(char **array);
+int					ft_arraylen(char **array);
 double				ft_atof(char *str);
 int					ft_atoi(const char *str);
 void				ft_bzero(void *str, size_t size);
 void				*ft_calloc(size_t num, size_t size);
 int					ft_iabs(int nb);
-int					ft_is_digit_sign(char **str, int i);
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);
 int					ft_isascii(int c);
 int					ft_isdigit(int c);
 int					ft_isprint(int c);
 int					ft_issign(int c);
+int					ft_isspace(int c);
 char				*ft_itoa(int n);
 char				*ft_sltoa(long long nl);
 char				*ft_ultoa(unsigned long long ul);
@@ -79,6 +80,7 @@ void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 char				*ft_strjoin(char const *s1, char const *s2);
 size_t				ft_strlcat(char *dest, const char *src, size_t size);
 size_t				ft_strlcpy(char *dest, const char *src, size_t size);
+char				*ft_strldup(const char *str, size_t len);
 size_t				ft_strlen(const char *str);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int					ft_strncmp(const char *s1, const char *s2, size_t size);

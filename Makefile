@@ -11,19 +11,18 @@ SRCS_GNL = $(wildcard $(SRC_DIR)/gnl/*.c)
 OBJS_FT = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS_FT))
 OBJS_PF = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS_PF))
 OBJS_GNL = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS_GNL))
-#########################  directorios(rutas)  #################################
+#═════════════════════════  directorios(rutas)  ═══════════════════════════════#
 INC_DIR = inc
 OBJ_DIR = obj
 SRC_DIR = src
-#########################  Colors  #############################################
+#══════════════════════════════  Colors  ══════════════════════════════════════#
 WHITE	:= \033[37;1m
 RESET	:= \033[0m
 U_LINE	:= \033[4m
 BLUE = \033[1;38;5;27m
-#########################  Normas  #############################################
+#══════════════════════════════  Normas  ══════════════════════════════════════#
 $(NAME): $(OBJS_FT) $(OBJS_PF) $(OBJS_GNL)
 	@$(AR) $@ $(OBJS_FT) $(OBJS_PF) $(OBJS_GNL)
-	@echo "\n$(WHITE)$(U_LINE) LIBFT: Compiled $(RESET)\n"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INC_DIR)/*.h
 	@mkdir -p $(OBJ_DIR)
@@ -32,7 +31,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INC_DIR)/*.h
 	@mkdir -p $(OBJ_DIR)/gnl
 	@echo "$(BLUE)LIBFT Compiling:$(RESET) $(notdir $<)"
 	@$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
-################################  ARGS  ########################################
+#═══════════════════════════════  ARGS   ══════════════════════════════════════#
 all: $(NAME)
 
 show:

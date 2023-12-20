@@ -6,19 +6,16 @@
 /*   By: zafraedu <zafraedu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 01:46:28 by ezafra-r          #+#    #+#             */
-/*   Updated: 2023/10/08 23:12:12 by zafraedu         ###   ########.fr       */
+/*   Updated: 2023/10/12 15:20:35 by zafraedu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-/*════════════════════════════ [  LIBS ] ═════════════════════════════════════*/
+/*═════════════════════════════ [ LIBS ] ═════════════════════════════════════*/
 # include "./libft.h"
 # include <stdarg.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
 
 /*══════════════════════════ [  STRUCTS ] ════════════════════════════════════*/
 
@@ -34,6 +31,7 @@ typedef struct s_flags
 	int	space;
 	int	plus;
 }		t_flags;
+
 /*═════════════════════════ [  FUNCTIONS ] ═══════════════════════════════════*/
 
 t_flags	ft_flags_init(void);
