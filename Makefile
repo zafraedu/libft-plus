@@ -30,7 +30,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INC_DIR)/*.h
 	@mkdir -p $(OBJ_DIR)/pf
 	@mkdir -p $(OBJ_DIR)/gnl
 	@echo "$(BLUE)LIBFT Compiling:$(RESET) $(notdir $<)"
-	@$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
+	@$(CC) $(CFLAGS) -I$(INC_DIR) -c $< -o $@
 #═══════════════════════════════  ARGS   ══════════════════════════════════════#
 all: $(NAME)
 
