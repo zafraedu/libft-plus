@@ -6,7 +6,7 @@
 /*   By: ezafra-r <ezafra-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 17:02:51 by zafraedu          #+#    #+#             */
-/*   Updated: 2024/01/29 13:13:53 by ezafra-r         ###   ########.fr       */
+/*   Updated: 2024/01/29 15:39:02 by ezafra-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_free2d(char **ptr)
 		return ;
 	i = 0;
 	while (ptr[i])
-		ft_free(ptr[i++]);
+		free(ptr[i++]);
 	free(ptr);
 	ptr = NULL;
 }
