@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memfree.c                                       :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zafraedu <zafraedu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ezafra-r <ezafra-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 17:03:06 by zafraedu          #+#    #+#             */
-/*   Updated: 2023/10/09 00:20:15 by zafraedu         ###   ########.fr       */
+/*   Updated: 2024/01/29 13:09:41 by ezafra-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
  *
  * @param ptr   Puntero cuya memoria se va a liberar y establecer a NULL.
  */
-void	ft_memfree(void *ptr)
+void	ft_free(void *ptr)
 {
 	if (!ptr)
 		return ;

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memfree_all.c                                   :+:      :+:    :+:   */
+/*   ft_free2d.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zafraedu <zafraedu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ezafra-r <ezafra-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 17:02:51 by zafraedu          #+#    #+#             */
-/*   Updated: 2023/10/09 00:19:38 by zafraedu         ###   ########.fr       */
+/*   Updated: 2024/01/29 13:13:53 by ezafra-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
  *
  * @param ptr Puntero al array de cadenas de caracteres.
  */
-void	ft_memfree_all(char **ptr)
+void	ft_free2d(char **ptr)
 {
 	int	i;
 
@@ -31,7 +31,7 @@ void	ft_memfree_all(char **ptr)
 		return ;
 	i = 0;
 	while (ptr[i])
-		ft_memfree(ptr[i++]);
+		ft_free(ptr[i++]);
 	free(ptr);
 	ptr = NULL;
 }

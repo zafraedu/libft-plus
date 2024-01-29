@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zafraedu <zafraedu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ezafra-r <ezafra-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 18:19:40 by ezafra-r          #+#    #+#             */
-/*   Updated: 2023/12/13 18:32:40 by zafraedu         ###   ########.fr       */
+/*   Updated: 2024/01/29 13:11:58 by ezafra-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ double				ft_atof(char *str);
 int					ft_atoi(const char *str);
 void				ft_bzero(void *str, size_t size);
 void				*ft_calloc(size_t num, size_t size);
+void				ft_free2d(char **ptr);
+void				ft_free(void *ptr);
 int					ft_iabs(int nb);
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);
@@ -64,8 +66,6 @@ int					ft_lstsize(t_list *lst);
 void				*ft_memchr(const void *str, int c, size_t size);
 int					ft_memcmp(const void *s1, const void *s2, size_t size);
 void				*ft_memcpy(void *dest, const void *src, size_t size);
-void				ft_memfree_all(char **ptr);
-void				ft_memfree(void *ptr);
 void				*ft_memmove(void *dest, const void *src, size_t size);
 void				*ft_memset(void *str, int c, size_t size);
 void				ft_putchar_fd(char c, int fd);
@@ -82,6 +82,7 @@ size_t				ft_strlcat(char *dest, const char *src, size_t size);
 size_t				ft_strlcpy(char *dest, const char *src, size_t size);
 char				*ft_strldup(const char *str, size_t len);
 size_t				ft_strlen(const char *str);
+size_t				ft_strlen2d(char **arr);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int					ft_strncmp(const char *s1, const char *s2, size_t size);
 char				*ft_strnstr(const char *haystack, const char *needle,
